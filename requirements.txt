@@ -1,0 +1,5 @@
+Django==4.2
+pyspark==3.5.0
+yfinance==0.2.35
+apache-airflow==2.7.1
+chartjs==0.3.0

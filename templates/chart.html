@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Stock Price Chart</h2>
+    <canvas id="stockChart"></canvas>
+
+    <script>
+        const ctx = document.getElementById('stockChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labels|safe }},
+                datasets: [{
+                    label: 'Open Price',
+                    data: {{ open_prices|safe }},
+                    borderColor: 'blue',
+                    fill: false
+                }, {
+                    label: 'Close Price',
+                    data: {{ close_prices|safe }},
+                    borderColor: 'red',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
